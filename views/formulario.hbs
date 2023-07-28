@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="/css/estilos.css">
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+            crossorigin="anonymous">
+
+    </head>
+    <body>
+        {{> header}}
+
+            <p class="mensaje">{{mensaje}}</p>
+            <p class="error">{{error}}</p>
+    
+        <main>
+            <form action="/" method="post">
+                <div class="mb-3">
+                    <label for="txtPara" class="form-label">Para</label>
+                    <input type="email" class="form-control" name="txtPara"
+                        aria-describedby="emailHelp">
+
+                </div>
+                <div class="mb-3">
+                    <label for="txtAsunto" class="form-label">Asunto</label>
+                    <input type="text" class="form-control" name="txtAsunto">
+
+                </div>
+                <div class="mb-3">
+                    <label for="txtMensaje" class="form-label">Mensaje</label>
+                    <textarea name="txtMensaje" id="txtMensaje" cols="30"
+                        rows="10" class="form-control"></textarea>
+
+                </div>
+
+                <button type="submit" class="btn btn-primary">Enviar Correo</button>
+            </form>
+        </main>
+
+        {{> footer}}
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+            crossorigin="anonymous"></script>
+
+    </body>
+</html>

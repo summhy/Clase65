@@ -1,0 +1,18 @@
+header, footer {
+    background-color: rgb(199, 226, 236);
+    margin: 15px;
+}
+
+main{
+    margin: 15px;
+    max-width: 500px; 
+}
+
+.mensaje{
+    background-color: rgb(213, 240, 213);
+}
+
+
+.error{
+    background-color: rgb(249, 222, 211);
+}
