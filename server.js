@@ -9,9 +9,15 @@ import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
+const correos = [{nombre: "Nibaldo", mail:"nibaldoquezada@hotmail.com"},
+              {nombre: "Boris", mail:"borisandres.guinez@gmail.com"},
+              {nombre: "David", mail:"davidtorresim@gmail.com"},
+              {nombre: "Paula", mail:"macaya.paula@gmail.com"}
+            ];
 
 //crear constante par aaplicación express
 const app = express();
+
 
 //configuración del motor de plantilla a utilizar
 app.set("view engine", "hbs");
@@ -50,7 +56,7 @@ async function main(para, asunto, cuerpo) {
 
 //ruta raíz get
 app.get("/", (req, res)=>{
-    res.render("formulario");
+    res.render("formulario", {personas:correos});
 });
 
 //ruta raíz post
@@ -63,6 +69,12 @@ app.post("/", async (req, res)=>{
     }
     res.render("formulario",{mesaje:"Mail enviado correctamente"});
    
+});
+
+app.get("/correos", (req, res)=>{
+  console.log("servidor");
+  console.log(correos);
+  res.json(correos);
 });
 
 //servicio levantado
